@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Support — Tillsee</title>
+    <meta name="description" content="Get in touch with the Tillsee team. We're a small, quiet team — we read everything." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Instrument+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Reenie+Beanie&family=Special+Elite&display=swap" rel="stylesheet">
+
+    <style>
+      /* ─── Lavender Botanical Theme ──────────────────────────────────── */
+      :root {
+        --lav-bg:        #ede0f5;
+        --lav-surface:   #faf7fd;
+        --lav-card:      #ffffff;
+        --lav-ink:       #2e1f4a;
+        --lav-ink-soft:  #5a4478;
+        --lav-muted:     #9b82b8;
+        --lav-accent:    #7b5ea7;
+        --lav-accent-h:  #9b7ecb;
+        --lav-pink:      #e87fa0;
+        --lav-border:    rgba(123, 94, 167, 0.2);
+        --lav-border-s:  rgba(123, 94, 167, 0.35);
+
+        --font-serif:       'Cormorant Garamond', Georgia, serif;
+        --font-sans:        'Instrument Sans', -apple-system, sans-serif;
+        --font-body:        'Lora', Garamond, serif;
+        --font-hand:        'Caveat', cursive;
+        --font-scrawl:      'Reenie Beanie', cursive;
+
+        --ease:  cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html {
+        background-color: var(--lav-bg);
+        color: var(--lav-ink);
+        font-family: var(--font-body);
+        font-size: 16px;
+        line-height: 1.65;
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        min-height: 100vh;
+        background:
+          url('/support-bg.png') center bottom / cover no-repeat fixed;
+        overflow-x: hidden;
+      }
+
+      /* Soft vignette so text stays readable over the bg illustration */
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(ellipse at 50% 30%, rgba(237,224,245,0.55) 0%, rgba(237,224,245,0.85) 100%);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* ─── Scrollbar ─────────────────────────────────────────────────── */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: var(--lav-bg); }
+      ::-webkit-scrollbar-thumb { background: var(--lav-muted); border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--lav-accent); }
+
+      /* ─── Container ─────────────────────────────────────────────────── */
+      .container {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* ─── Fade-in animation ─────────────────────────────────────────── */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+      }
+      .fade-up.active { opacity: 1; transform: translateY(0); }
+      .fade-up:nth-child(2) { transition-delay: 0.1s; }
+      .fade-up:nth-child(3) { transition-delay: 0.2s; }
+      .fade-up:nth-child(4) { transition-delay: 0.3s; }
+
+      /* ─── Header ────────────────────────────────────────────────────── */
+      .sp-header {
+        position: fixed;
+        top: 0; left: 0; width: 100%;
+        z-index: 100;
+        padding: 1.1rem 0;
+        background: rgba(237, 224, 245, 0.72);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--lav-border);
+      }
+      .sp-header .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo-img {
+        height: 34px;
+        width: auto;
+        display: block;
+        /* logo is black — keep it; it sits on a pale header */
+        opacity: 0.85;
+      }
+
+      /* ─── Hero ──────────────────────────────────────────────────────── */
+      .sp-hero {
+        padding: 9rem 0 4rem;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .sp-eyebrow {
+        display: inline-block;
+        font-family: var(--font-scrawl);
+        font-size: 1.25rem;
+        color: var(--lav-pink);
+        letter-spacing: 0.04em;
+        margin-bottom: 1rem;
+      }
+
+      .sp-hero h1 {
+        font-family: var(--font-hand);
+        font-size: clamp(3.2rem, 8vw, 5.8rem);
+        font-weight: 600;
+        color: var(--lav-ink);
+        line-height: 1.05;
+        margin-bottom: 1.25rem;
+      }
+
+      .sp-hero p {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        color: var(--lav-ink-soft);
+        max-width: 460px;
+        margin: 0 auto 2rem;
+        line-height: 1.7;
+      }
+
+      /* decorative handwritten note under tagline */
+      .sp-hero-note {
+        font-family: var(--font-scrawl);
+        font-size: 1.1rem;
+        color: var(--lav-muted);
+        margin-bottom: 2.2rem;
+        display: block;
+      }
+
+      .sp-email-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-family: var(--font-serif);
+        font-size: 1.25rem;
+        font-style: italic;
+        color: var(--lav-accent);
+        text-decoration: none;
+        border-bottom: 1px dashed var(--lav-accent);
+        padding-bottom: 2px;
+        transition: color 0.2s, border-color 0.2s;
+      }
+      .sp-email-link:hover {
+        color: var(--lav-pink);
+        border-color: var(--lav-pink);
+      }
+      .sp-email-link svg {
+        width: 18px; height: 18px;
+        stroke: currentColor; fill: none;
+        flex-shrink: 0;
+      }
+
+      /* small botanical divider between hero and form */
+      .sp-divider {
+        text-align: center;
+        font-size: 1.6rem;
+        color: var(--lav-muted);
+        opacity: 0.5;
+        margin: 3rem 0 0;
+        letter-spacing: 0.4rem;
+      }
+
+      /* ─── Form Section ──────────────────────────────────────────────── */
+      .sp-form-section {
+        position: relative;
+        z-index: 1;
+        padding: 4rem 0 8rem;
+      }
+
+      .sp-form-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+      .sp-form-header h2 {
+        font-family: var(--font-hand);
+        font-weight: 600;
+        font-size: clamp(2rem, 4.5vw, 2.8rem);
+        color: var(--lav-ink);
+        margin-bottom: 0.5rem;
+      }
+      .sp-form-header p {
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        color: var(--lav-muted);
+        font-style: italic;
+      }
+
+      /* ─── POSTCARD — Modern Fancy ───────────────────────────────────── */
+
+      .postcard {
+        background: #fefcff;
+        border-radius: 10px;
+        /* Elegant double-line border: outer 1px solid + inner 1px via inset shadow */
+        border: 1px solid rgba(123,94,167,0.3);
+        box-shadow:
+          inset 0 0 0 8px #fefcff,
+          inset 0 0 0 9px rgba(123,94,167,0.14),
+          0 4px 2px rgba(46,31,74,0.03),
+          0 20px 60px rgba(123,94,167,0.15),
+          0 48px 100px rgba(46,31,74,0.07);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Corner ornaments — all four via pseudo + two absolute spans */
+      .postcard::before { content: '✦'; position: absolute; top: 16px; left: 18px;  font-size: 0.6rem; color: rgba(123,94,167,0.3); pointer-events: none; z-index: 2; }
+      .postcard::after  { content: '✦'; position: absolute; top: 16px; right: 18px; font-size: 0.6rem; color: rgba(123,94,167,0.3); pointer-events: none; z-index: 2; }
+      .pc-corner-bl { position: absolute; bottom: 16px; left: 18px;  font-size: 0.6rem; color: rgba(123,94,167,0.3); pointer-events: none; z-index: 2; }
+      .pc-corner-br { position: absolute; bottom: 16px; right: 18px; font-size: 0.6rem; color: rgba(123,94,167,0.3); pointer-events: none; z-index: 2; }
+
+      /* Inner paper: white with very subtle lavender ruled lines */
+      .pc-inner {
+        background-image: repeating-linear-gradient(
+          transparent 0px, transparent 31px,
+          rgba(155,130,184,0.07) 31px, rgba(155,130,184,0.07) 32px
+        );
+        background-size: 100% 32px;
+        position: relative;
+        border-radius: 8px;
+      }
+
+      /* Faint botanical wash in lower-right — matches the page bg */
+      .pc-inner::after {
+        content: '';
+        position: absolute;
+        bottom: 0; right: 0;
+        width: 180px; height: 180px;
+        background: radial-gradient(ellipse at 80% 90%, rgba(201,168,232,0.12) 0%, transparent 70%);
+        pointer-events: none;
+        border-radius: 0 0 8px 0;
+      }
+
+      /* ── Header ───────────────────────────────── */
+      .pc-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 2rem 2.5rem 1.5rem;
+        border-bottom: 1px solid rgba(123,94,167,0.12);
+        position: relative;
+        z-index: 1;
+      }
+
+      .pc-title-col {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+      .pc-title-text {
+        font-family: var(--font-serif);
+        font-size: 1.15rem;
+        font-weight: 300;
+        letter-spacing: 0.45em;
+        color: var(--lav-ink);
+        text-transform: uppercase;
+        line-height: 1;
+      }
+      .pc-title-rule {
+        width: 36px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--lav-accent), transparent);
+        margin: 0.35rem 0;
+      }
+      .pc-subtitle-text {
+        font-family: var(--font-serif);
+        font-size: 0.62rem;
+        font-style: italic;
+        letter-spacing: 0.2em;
+        color: var(--lav-muted);
+      }
+
+      /* ── Stamp ─────────────────────────── */
+      .pc-stamp-col {
+        position: relative;
+        flex-shrink: 0;
+      }
+      .pc-stamp {
+        width: 76px;
+        height: 92px;
+        /* lavender gradient bg */
+        background: linear-gradient(145deg, #f0e8fa 0%, #dcc8f5 100%);
+        /* double inner line: elegant modern stamp frame */
+        border: 1.5px solid rgba(123,94,167,0.45);
+        box-shadow:
+          inset 0 0 0 4px rgba(255,255,255,0.7),
+          inset 0 0 0 5px rgba(123,94,167,0.18);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 8px 6px;
+        gap: 4px;
+        position: relative;
+      }
+      .pc-stamp-img {
+        width: 46px;
+        height: auto;
+        /* keep logo black — reads on lavender */
+        opacity: 0.85;
+      }
+      .pc-stamp-label {
+        font-family: var(--font-serif);
+        font-size: 0.5rem;
+        letter-spacing: 0.22em;
+        color: #5a4478;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+
+      /* Postmark — refined mauve circle */
+      .pc-postmark {
+        position: absolute;
+        top: -12px;
+        right: -14px;
+        width: 56px;
+        height: 56px;
+        pointer-events: none;
+        transform: rotate(-15deg);
+        opacity: 0.55;
+      }
+
+      /* ── Form body ────────────────────── */
+      .pc-body {
+        padding: 1.8rem 2.5rem 2.2rem;
+        position: relative;
+        z-index: 1;
+      }
+      .pc-body.hidden { display: none; }
+
+      .pc-form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.6rem 2rem;
+        margin-bottom: 1.4rem;
+      }
+      .pc-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .pc-field-full { margin-bottom: 1.2rem; }
+
+      .pc-label {
+        font-family: var(--font-serif);
+        font-size: 0.65rem;
+        font-style: italic;
+        letter-spacing: 0.18em;
+        color: var(--lav-muted);
+        text-transform: lowercase;
+      }
+      .pc-input {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(123,94,167,0.2);
+        padding: 0.4rem 0;
+        font-family: 'Caveat', cursive;
+        font-size: 1.2rem;
+        color: var(--lav-ink);
+        width: 100%;
+        transition: border-color 0.25s;
+      }
+      .pc-input:focus { outline: none; border-color: rgba(123,94,167,0.55); }
+      .pc-input::placeholder { color: rgba(155,130,184,0.4); font-style: normal; }
+      .pc-select { cursor: pointer; }
+
+      /* Section separator */
+      .pc-rule-label {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin: 0.4rem 0 1.4rem;
+      }
+      .pc-rule-line {
+        flex: 1; height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(123,94,167,0.18), transparent);
+      }
+      .pc-rule-tag {
+        font-family: var(--font-serif);
+        font-size: 0.65rem;
+        font-style: italic;
+        letter-spacing: 0.18em;
+        color: rgba(155,130,184,0.7);
+        white-space: nowrap;
+      }
+
+      .pc-textarea {
+        background: transparent;
+        border: none;
+        padding: 0.3rem 0;
+        font-family: 'Caveat', cursive;
+        font-size: 1.2rem;
+        color: var(--lav-ink);
+        width: 100%;
+        resize: none;
+        min-height: 112px;
+        line-height: 32px;
+        transition: opacity 0.2s;
+      }
+      .pc-textarea:focus { outline: none; }
+      .pc-textarea::placeholder { color: rgba(155,130,184,0.4); }
+
+      /* Submit — lavender pill, matches page style */
+      .pc-submit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        width: 100%;
+        margin-top: 2rem;
+        background: var(--lav-accent);
+        color: #fff;
+        border: none;
+        border-radius: 100px;
+        padding: 0.9rem 1.5rem;
+        font-family: var(--font-sans);
+        font-weight: 600;
+        font-size: 0.88rem;
+        letter-spacing: 0.04em;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 4px 18px rgba(123,94,167,0.28);
+      }
+      .pc-submit:hover {
+        background: var(--lav-accent-h);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(123,94,167,0.32);
+      }
+      .pc-submit svg { flex-shrink: 0; }
+
+      /* ── Success state ─────────────────── */
+      .pc-success {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 4rem 3rem;
+        position: relative;
+        z-index: 1;
+      }
+      .pc-success.visible { display: flex; }
+
+      /* Large faded postmark watermark */
+      .pc-success::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='88' fill='none' stroke='rgba(155%2C130%2C184%2C0.1)' stroke-width='5'/%3E%3Ccircle cx='100' cy='100' r='66' fill='none' stroke='rgba(155%2C130%2C184%2C0.08)' stroke-width='3'/%3E%3Cpath d='M18 95 Q58 82 100 95 Q142 108 182 95' fill='none' stroke='rgba(155%2C130%2C184%2C0.09)' stroke-width='3.5'/%3E%3Cpath d='M18 105 Q58 92 100 105 Q142 118 182 105' fill='none' stroke='rgba(155%2C130%2C184%2C0.09)' stroke-width='3.5'/%3E%3C/svg%3E") center / 280px no-repeat;
+        pointer-events: none;
+        border-radius: 8px;
+      }
+
+      .pc-wax-seal {
+        width: 76px; height: 76px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 38% 35%, #c49ee8, var(--lav-accent));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 24px rgba(123,94,167,0.38), inset -2px -2px 8px rgba(0,0,0,0.12);
+        margin-bottom: 1.6rem;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        padding: 14px;
+      }
+      .pc-wax-logo {
+        width: 100%; height: auto;
+        filter: invert(1) brightness(2);
+        opacity: 0.9;
+      }
+      .pc-success-title {
+        font-family: var(--font-serif);
+        font-size: 2.2rem;
+        font-weight: 300;
+        letter-spacing: 0.12em;
+        color: var(--lav-ink);
+        margin-bottom: 0.7rem;
+        position: relative; z-index: 1;
+      }
+      .pc-success-msg {
+        font-family: 'Caveat', cursive;
+        font-size: 1.25rem;
+        color: var(--lav-ink-soft);
+        max-width: 360px;
+        line-height: 1.6;
+        margin-bottom: 1.4rem;
+        position: relative; z-index: 1;
+      }
+      .pc-success-msg strong { color: var(--lav-accent); }
+      .pc-success-quote {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-size: 1.05rem;
+        color: var(--lav-muted);
+        max-width: 300px;
+        border-top: 1px solid rgba(123,94,167,0.14);
+        padding-top: 1.2rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        position: relative; z-index: 1;
+      }
+      .pc-reset-btn {
+        background: transparent;
+        border: 1.5px solid rgba(123,94,167,0.35);
+        color: var(--lav-accent);
+        padding: 0.6rem 1.6rem;
+        font-family: var(--font-sans);
+        font-size: 0.82rem;
+        letter-spacing: 0.04em;
+        cursor: pointer;
+        border-radius: 100px;
+        transition: background 0.2s, color 0.2s, border-color 0.2s;
+        position: relative; z-index: 1;
+      }
+      .pc-reset-btn:hover { background: var(--lav-accent); color: #fff; border-color: var(--lav-accent); }
+
+      /* ─── Footer ────────────────────────────────────────────────────── */
+      .sp-footer {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 3rem 0 4rem;
+        border-top: 1px solid var(--lav-border);
+        background: rgba(237,224,245,0.6);
+        backdrop-filter: blur(8px);
+      }
+      .footer-logo-img {
+        height: 40px; width: auto;
+        display: block;
+        margin: 0 auto 1rem;
+        opacity: 0.75;
+      }
+      .sp-footer-tagline {
+        font-family: var(--font-scrawl);
+        font-size: 1.15rem;
+        color: var(--lav-muted);
+        margin-bottom: 0.3rem;
+      }
+      .sp-footer-copy {
+        font-family: var(--font-sans);
+        font-size: 0.72rem;
+        color: rgba(155,130,184,0.6);
+        margin-top: 1.5rem;
+      }
+
+      /* ─── Responsive ────────────────────────────────────────────────── */
+      @media (max-width: 640px) {
+        .pc-header { padding: 1.4rem 1.5rem 1.2rem; }
+        .pc-body { padding: 1.4rem 1.5rem 1.8rem; }
+        .pc-form-row { grid-template-columns: 1fr; gap: 1.2rem; }
+        .pc-title-text { font-size: 0.95rem; letter-spacing: 0.3em; }
+        .pc-success { padding: 2.5rem 1.5rem; }
+        .sp-hero { padding: 8rem 0 3rem; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="sp-header">
+      <div class="container">
+        <a href="/">
+          <img src="/logo.png" alt="Tillsee" class="logo-img" />
+        </a>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- Hero -->
+      <section class="sp-hero">
+        <div class="container">
+          <span class="sp-eyebrow fade-up">✦ support ✦</span>
+          <h1 class="fade-up">We're here.</h1>
+          <p class="fade-up">
+            A quiet place to ask questions or share a thought.
+            We're a small team — we read everything.
+          </p>
+          <span class="sp-hero-note fade-up">— slowly, on purpose</span>
+          <a href="mailto:support@tillsee.com" class="sp-email-link fade-up">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+            </svg>
+            support@tillsee.com
+          </a>
+          <div class="sp-divider fade-up">· · ✿ · ·</div>
+        </div>
+      </section>
+
+      <!-- Contact Form -->
+      <section class="sp-form-section">
+        <div class="container">
+
+          <div class="sp-form-header fade-up">
+            <h2>Send us a letter.</h2>
+            <p>We'll write back within one to two business days.</p>
+          </div>
+
+          <!-- POSTCARD -->
+          <div class="postcard fade-up">
+            <!-- Corner ornaments (bottom two via spans) -->
+            <span class="pc-corner-bl" aria-hidden="true">✦</span>
+            <span class="pc-corner-br" aria-hidden="true">✦</span>
+
+            <div class="pc-inner">
+
+              <!-- Postcard header: title left, stamp + postmark right -->
+              <div class="pc-header">
+                <div class="pc-title-col">
+                  <span class="pc-title-text">Post Card</span>
+                  <div class="pc-title-rule"></div>
+                  <span class="pc-subtitle-text">for correspondence</span>
+                </div>
+                <div class="pc-stamp-col">
+                  <div class="pc-stamp">
+                    <img src="/logo.png" alt="Tillsee butterfly" class="pc-stamp-img" />
+                    <span class="pc-stamp-label">Tillsee</span>
+                  </div>
+                  <!-- Refined mauve postmark -->
+                  <svg class="pc-postmark" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(123,94,167,0.6)" stroke-width="2"/>
+                    <circle cx="40" cy="40" r="27" fill="none" stroke="rgba(123,94,167,0.45)" stroke-width="1.2"/>
+                    <path d="M12 37 Q30 30 40 37 Q50 44 68 37" fill="none" stroke="rgba(123,94,167,0.55)" stroke-width="1.6"/>
+                    <path d="M12 43 Q30 36 40 43 Q50 50 68 43" fill="none" stroke="rgba(123,94,167,0.55)" stroke-width="1.6"/>
+                    <text x="40" y="22" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="7" fill="rgba(123,94,167,0.7)" letter-spacing="2" font-style="italic">Tillsee</text>
+                    <text x="40" y="61" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="6" fill="rgba(123,94,167,0.6)" letter-spacing="1.5">2026</text>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Form body -->
+              <div class="pc-body" id="support-form-view">
+                <form id="support-contact-form" novalidate>
+
+                  <div class="pc-form-row">
+                    <div class="pc-field">
+                      <label for="support-name" class="pc-label">your name</label>
+                      <input type="text" id="support-name" class="pc-input" placeholder="Julian or Clara…" required />
+                    </div>
+                    <div class="pc-field">
+                      <label for="support-email" class="pc-label">your email</label>
+                      <input type="email" id="support-email" class="pc-input" placeholder="name@domain.com" required />
+                    </div>
+                  </div>
+
+                  <div class="pc-rule-label">
+                    <div class="pc-rule-line"></div>
+                    <span class="pc-rule-tag">regarding</span>
+                    <div class="pc-rule-line"></div>
+                  </div>
+
+                  <div class="pc-field pc-field-full">
+                    <label for="support-topic" class="pc-label">topic</label>
+                    <select id="support-topic" class="pc-input pc-select" required>
+                      <option value="" disabled selected>Select a topic…</option>
+                      <option value="general">General Question</option>
+                      <option value="account">Account</option>
+                      <option value="coffee-club">Coffee Club</option>
+                      <option value="feedback">Feedback</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <div class="pc-field pc-field-full">
+                    <label for="support-message" class="pc-label">message</label>
+                    <textarea id="support-message" class="pc-textarea" placeholder="Write as much or as little as you like…" required></textarea>
+                  </div>
+
+                  <button type="submit" class="pc-submit">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+                    Send this letter
+                  </button>
+                </form>
+              </div>
+
+              <!-- Success state -->
+              <div class="pc-success" id="support-success-view">
+                <div class="pc-wax-seal">
+                  <img src="/logo.png" alt="Tillsee" class="pc-wax-logo" />
+                </div>
+                <h3 class="pc-success-title">Received.</h3>
+                <p class="pc-success-msg">
+                  Thank you, <strong id="support-success-name">Friend</strong>.
+                  We'll write back to <strong id="support-success-email"></strong> within a day or two.
+                </p>
+                <p class="pc-success-quote">
+                  "We read every letter. Slowly, on purpose."
+                </p>
+                <button class="pc-reset-btn" id="btn-support-reset">Send another letter</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="sp-footer">
+      <img src="/logo.png" alt="Tillsee" class="footer-logo-img" />
+      <p class="sp-footer-tagline">Slow enough to feel something.</p>
+      <p class="sp-footer-copy">&copy; 2026 Tillsee. All rights reserved. Made for romantic intent.</p>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        initFadeIns();
+        initSupportForm();
+      });
+
+      function initFadeIns() {
+        const els = document.querySelectorAll('.fade-up');
+        const obs = new IntersectionObserver((entries, o) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('active'); o.unobserve(e.target); }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(el => obs.observe(el));
+      }
+
+      function initSupportForm() {
+        const form        = document.getElementById('support-contact-form');
+        const formView    = document.getElementById('support-form-view');
+        const successView = document.getElementById('support-success-view');
+        const successName = document.getElementById('support-success-name');
+        const successEmail= document.getElementById('support-success-email');
+        const resetBtn    = document.getElementById('btn-support-reset');
+        if (!form) return;
+
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          const name  = document.getElementById('support-name').value.trim();
+          const email = document.getElementById('support-email').value.trim();
+          if (!name || !email) return;
+          successName.textContent  = name.split(' ')[0];
+          successEmail.textContent = email;
+          formView.classList.add('hidden');
+          successView.classList.add('visible');
+        });
+
+        resetBtn && resetBtn.addEventListener('click', () => {
+          form.reset();
+          successView.classList.remove('visible');
+          formView.classList.remove('hidden');
+        });
+
+        /* keep textarea line-height in sync with the ruled-paper grid */
+        const ta = document.getElementById('support-message');
+        if (ta) { ta.style.lineHeight = '28px'; ta.style.paddingTop = '4px'; }
+      }
+    </script>
+  </body>
+</html>

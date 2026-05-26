@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Optimization -->
+    <title>Tillsee — Slow enough to feel something.</title>
+    <meta name="description" content="A small, quiet place to fall in love again, the way it used to happen. One person at a time. With your whole attention. Tillsee is designed for high-intent dating." />
+    <meta name="keywords" content="dating, slow dating, analog dating, Tillsee, high intent dating, relationship, Brooklyn, Boston, Cambridge" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Instrument+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Reenie+Beanie&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Film Grain Overlay -->
+    <div class="film-grain"></div>
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="#" class="logo" id="header-logo">
+          <span class="logo-icon">🍀</span>
+          <span class="logo-text">tillsee</span>
+        </a>
+        <nav class="main-nav">
+          <a href="#reckoning" class="nav-link" id="nav-philosophy">The Philosophy</a>
+          <a href="#morning" class="nav-link" id="nav-morning">A Morning</a>
+          <a href="#promises" class="nav-link" id="nav-promises">Promises</a>
+          <a href="#coffee-club" class="nav-link" id="nav-coffee-club">Coffee Club</a>
+        </nav>
+        <div class="header-actions">
+          <a href="#waitlist" class="btn-cta btn-header" id="btn-header-waitlist">Join the Waitlist</a>
+        </div>
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation" id="btn-mobile-toggle">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="section-hero" id="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <span class="hero-tagline element-fade-in">Slow enough to feel something.</span>
+            <h1 class="hero-title element-fade-in" id="hero-heading">Somewhere, someone is waking up to you.</h1>
+            <p class="hero-text element-fade-in">
+              Each morning, ten people. Five hearts to give. One conversation at a time.
+              This is <span class="brand-highlight">Tillsee</span> — a small, quiet place to fall in love again, the way it used to happen. 
+              One person at a time. With your whole attention.
+            </p>
+            <div class="hero-actions element-fade-in">
+              <a href="#waitlist" class="btn-cta btn-large" id="btn-hero-waitlist">Join the Waitlist</a>
+              <span class="hero-location-info">Opening this season in New York & Boston</span>
+            </div>
+          </div>
+          <div class="hero-image-wrapper element-fade-in">
+            <div class="vintage-frame">
+              <div class="vintage-tape tape-top-left"></div>
+              <div class="vintage-tape tape-top-right"></div>
+              <img src="./hero_couple.png" alt="Couple laughing together in a sunlit cafe" class="hero-image" id="img-hero-couple" />
+              <div class="frame-caption">Tillsee / Brooklyn, NY</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Reckoning -->
+      <section class="section-reckoning" id="reckoning">
+        <div class="container">
+          <div class="reckoning-header text-center">
+            <h2 class="section-title text-reveal" id="reckoning-heading">Do you remember what it felt like?</h2>
+          </div>
+          <div class="reckoning-grid">
+            <div class="reckoning-left scroll-reveal">
+              <p class="lead-text">
+                Before the swiping. Before the queue of half-strangers. Before love became a thing you scheduled between meetings and gave up on by Sunday.
+              </p>
+              <p class="accent-text">
+                Do you remember when meeting someone felt like weather — sudden, undeserved, a little holy?
+              </p>
+            </div>
+            <div class="reckoning-right scroll-reveal">
+              <div class="editorial-divider"></div>
+              <p class="strong-text">We do.</p>
+              <p>
+                And we've been watching what the apps have done to it. The endless scroll. The dopamine drip. The slow, expensive lesson that the more people you're shown, the lonelier you somehow become.
+              </p>
+              <p>
+                It isn't your fault. You were never meant to choose between three hundred faces at midnight. No heart was built for that.
+              </p>
+              <p class="slower-pulse-highlight">
+                So we built something else.<br>
+                <span class="italic-serif">Something with a slower pulse.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- App Comparison Widget -->
+          <div class="comparison-widget scroll-reveal" id="app-comparison">
+            <h3 class="comparison-title text-center">The Contrast</h3>
+            <div class="comparison-grid-layout">
+              <!-- Chaotic Swipe App -->
+              <div class="comparison-card card-chaotic" id="comparison-chaotic-card">
+                <div class="card-badge badge-chaotic">Modern Swipe Apps</div>
+                
+                <div class="dopamine-meter-wrapper">
+                  <span class="dopamine-label">Dopamine Burnout: <span id="dopamine-percentage">20%</span></span>
+                  <div class="dopamine-bar"><div class="dopamine-fill" id="dopamine-fill-el"></div></div>
+                </div>
+
+                <div class="chaotic-overlay-stack" id="chaotic-swipe-zone">
+                  <!-- Generated dynamically in JS -->
+                </div>
+                
+                <div class="swipe-prompt-text">Tap cards to swipe them away</div>
+                
+                <div class="card-footer-desc">
+                  <strong id="comparison-chaotic-title">Swipe Exhaustion</strong>
+                  <span id="swipe-exhaustion-text">Click cards to experience the loop.</span>
+                </div>
+              </div>
+              
+              <!-- Tillsee Spotlight -->
+              <div class="comparison-card card-tillsee">
+                <div class="card-badge badge-tillsee">Tillsee</div>
+                <div class="tillsee-spotlight-box">
+                  <div class="tillsee-inner-card">
+                    <img src="./silhouette_art.png" alt="A single deep connection" class="tillsee-card-img" />
+                    <div class="tillsee-card-content">
+                      <h4>Julian, 28</h4>
+                      <p>"I believe the best things happen when we stop rushing..."</p>
+                      <div class="tillsee-card-footer">
+                        <span class="tillsee-heart-glow">🍀 One Conversation</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer-desc">
+                  <strong>A Quiet Spotlight</strong>
+                  <span>One single conversation. No distractions. Meaningful connection.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- A Morning on Tillsee -->
+      <section class="section-morning" id="morning">
+        <div class="container">
+          <div class="section-intro text-center">
+            <span class="section-subtitle-num">03 · A Morning on Tillsee</span>
+            <h2 class="section-title" id="morning-heading">Ten people. Five hearts. One conversation.</h2>
+            <p class="section-desc max-w-2xl mx-auto">
+              At first light, before the city remembers itself, your phone glows once.
+            </p>
+          </div>
+
+          <!-- Morning Simulator -->
+          <div class="simulator-layout scroll-reveal">
+            <div class="simulator-info">
+              <div class="simulator-steps">
+                <div class="sim-step active" data-step="1" id="step-coffee">
+                  <div class="step-num">1</div>
+                  <div class="step-details">
+                    <h4>The Morning Coffee</h4>
+                    <p>Read them with your coffee. Sit with them. Notice who you keep thinking about an hour later.</p>
+                  </div>
+                </div>
+                <div class="sim-step" data-step="2" id="step-likes">
+                  <div class="step-num">2</div>
+                  <div class="step-details">
+                    <h4>Five Hearts. Make them count.</h4>
+                    <p>You're given five hearts to spend. Only five. The point isn't to spread them. The point is to mean them.</p>
+                  </div>
+                </div>
+                <div class="sim-step" data-step="3" id="step-match">
+                  <div class="step-num">3</div>
+                  <div class="step-details">
+                    <h4>A Single Door Opens</h4>
+                    <p>When two people choose each other on the same morning, we open a single door between you. One conversation. Only one.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="simulator-controls">
+                <button class="btn-cta btn-outline" id="btn-sim-reset">Reset Simulation</button>
+              </div>
+            </div>
+
+            <!-- Phone Device Frame -->
+            <div class="phone-device-container">
+              <div class="phone-device">
+                <div class="phone-screen" id="phone-screen-content">
+                  <!-- Content injected dynamically via JS -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Four Promises, Kept Gently -->
+      <section class="section-promises" id="promises">
+        <div class="container">
+          <div class="section-intro text-center">
+            <span class="section-subtitle-num">04 · Four Promises, Kept Gently</span>
+            <h2 class="section-title" id="promises-heading">What we will, and will not, do.</h2>
+          </div>
+
+          <div class="promises-grid">
+            <!-- Promise 1 -->
+            <div class="promise-card scroll-reveal" id="promise-card-1">
+              <div class="promise-icon-svg-wrapper">
+                <svg class="promise-svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                  <!-- Inner accent calendar -->
+                  <rect x="9.5" y="8.5" width="5" height="5" rx="0.5" stroke-dasharray="1 1"></rect>
+                </svg>
+              </div>
+              <h3 class="promise-title">Ten a day. No more.</h3>
+              <p class="promise-text">
+                The world will not show you more people than your heart can hold. We will. A small, careful list, sent once a morning, and then the day is yours.
+              </p>
+            </div>
+            <!-- Promise 2 -->
+            <div class="promise-card scroll-reveal" id="promise-card-2">
+              <div class="promise-icon-svg-wrapper">
+                <svg class="promise-svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  <line x1="8" y1="12" x2="16" y2="12" stroke-dasharray="2 2"></line>
+                </svg>
+              </div>
+              <h3 class="promise-title">Five hearts. Make them count.</h3>
+              <p class="promise-text">
+                You only get five likes. We did this on purpose. When a thing is scarce, it becomes a choice — and dating, somewhere along the way, stopped being a choice. We're giving it back.
+              </p>
+            </div>
+            <!-- Promise 3 -->
+            <div class="promise-card scroll-reveal" id="promise-card-3">
+              <div class="promise-icon-svg-wrapper">
+                <svg class="promise-svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  <circle cx="12" cy="16" r="1.5" fill="currentColor"></circle>
+                </svg>
+              </div>
+              <h3 class="promise-title">One conversation at a time.</h3>
+              <p class="promise-text">
+                This is the part we love most. When two people choose each other, we close the rest of the room. No other chats. No other matches whispering in the background. Just one person, and the long, slow art of being known by them. Leave when you're ready. Not before.
+              </p>
+            </div>
+            <!-- Promise 4 -->
+            <div class="promise-card scroll-reveal" id="promise-card-4">
+              <div class="promise-icon-svg-wrapper">
+                <svg class="promise-svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                  <path d="M6 14s1.5-2 6-2 6 2 6 2" stroke-dasharray="1 2"></path>
+                </svg>
+              </div>
+              <h3 class="promise-title">Built on who you are.</h3>
+              <p class="promise-text">
+                We will not match you on your jawline. We will match you on the slow, true things — how you fight, how you forgive, what makes you cry at the kitchen sink. The things that decide, in the end, whether a love lasts the winter.
+              </p>
+            </div>
+          </div>
+
+          <div class="promises-quote text-center scroll-reveal">
+            <blockquote class="poetic-quote">
+              "Every other app promises love. We promise one real conversation at a time. That's a promise small enough to keep."
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- Built on Who You Are (Questions) -->
+      <section class="section-questions" id="questions">
+        <div class="container questions-grid">
+          <div class="questions-content scroll-reveal">
+            <span class="section-subtitle-num">05 · Built on Who You Are</span>
+            <h2 class="section-title" id="questions-heading">Eighty questions.<br>One honest portrait of a person.</h2>
+            <p class="questions-lead">
+              Photographs are beautiful liars. They show you a jaw, a smile, a holiday in Lisbon — but never the particular way a person hums while cooking, or how they hold a grudge, or what they wanted to be when they were twelve.
+            </p>
+            <p>
+              We ask the other questions. The ones that matter when the lighting goes dim.
+            </p>
+            <p class="highlight-quote">
+              It takes an hour. We know. But love is not a thing you should rush into being known.
+            </p>
+            <p class="subtext">
+              By the time your face appears on someone's morning, we already know enough about you both to be quietly, almost embarrassingly sure that you should meet.
+            </p>
+          </div>
+
+          <!-- Interactive Question dial / reveal -->
+          <div class="questions-dial-container scroll-reveal">
+            <div class="diary-notebook">
+              <div class="diary-spiral"></div>
+              <div class="diary-page">
+                <div class="diary-header">
+                  <span class="diary-tag">Tillsee / Question No. <span id="diary-question-number">12</span></span>
+                  <span class="diary-date" id="diary-timer-label">Auto-turning</span>
+                </div>
+                <div class="diary-body">
+                  <p class="diary-question" id="diary-question-text">How do you love?</p>
+                </div>
+                <div class="diary-footer">
+                  <button class="btn-cta btn-diary" id="btn-reveal-question">Flip to another question</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Coffee Club -->
+      <section class="section-coffee-club" id="coffee-club">
+        <div class="container">
+          <div class="coffee-club-grid">
+            <div class="coffee-club-image-wrapper scroll-reveal">
+              <div class="vintage-frame">
+                <div class="vintage-tape tape-top-right"></div>
+                <div class="vintage-tape tape-bottom-left"></div>
+                <img src="./coffee_shop.png" alt="A warm coffee shop gathering offline" class="coffee-club-image" id="img-coffee-shop" />
+                <div class="frame-caption">The Coffee Club / Brooklyn, NY</div>
+              </div>
+            </div>
+            
+            <div class="coffee-club-content scroll-reveal">
+              <span class="section-subtitle-num">06 · The Coffee Club</span>
+              <h2 class="section-title" id="coffee-club-heading">Some things still happen best in person.</h2>
+              <p>
+                Twice a month, in a small café in Brooklyn and another in Cambridge, we set out twenty-five chairs and a lot of good coffee.
+              </p>
+              <p>
+                No name tags. No icebreakers. No one telling you where to sit or what to say.
+              </p>
+              <p>
+                Just warm light, the smell of espresso, and a room full of people who, like you, decided that love might still be something you can stumble into — across a table, mid-sentence, while the rain comes down outside.
+              </p>
+              <p class="small-text">
+                You can come without being on the app. You can come with a friend. You can come and leave without saying a word to anyone, and we'll be glad you came anyway.
+              </p>
+              <p class="highlight-quote-small">
+                We just wanted to make sure the cities we love still had rooms where strangers could meet softly.
+              </p>
+              
+              <div class="coffee-club-actions">
+                <a href="#waitlist" class="btn-cta btn-outline" id="btn-see-gathering">See the next gathering</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seating chart visualization -->
+          <div class="seating-chart-container scroll-reveal" id="seating-chart-section">
+            <h3 class="seating-title text-center">Twenty-Five Chairs. Meet Softly.</h3>
+            <p class="seating-desc text-center">Hover or tap on a chair to feel the room.</p>
+            <div class="seating-grid" id="seating-grid-layout">
+              <!-- Chairs generated dynamically in JS -->
+            </div>
+            <div class="seating-tooltip" id="seating-tooltip-box">
+              <p class="tooltip-title">Chair 1</p>
+              <p class="tooltip-desc">A place waiting for you.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Who Tillsee Is For (Visual Alignment Quiz) -->
+      <section class="section-audience" id="audience">
+        <div class="container">
+          <div class="section-intro text-center">
+            <span class="section-subtitle-num">07 · Who Tillsee Is For</span>
+            <h2 class="section-title" id="audience-heading">Are you aligned with Tillsee?</h2>
+            <p class="section-desc max-w-2xl mx-auto">
+              We built Tillsee for a specific kind of romantic. Complete this visual check to see if our slow environment fits your heart.
+            </p>
+          </div>
+
+          <!-- Alignment Quiz Widget -->
+          <div class="quiz-wrapper scroll-reveal" id="alignment-quiz">
+            <div class="quiz-card">
+              <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress"></div></div>
+              
+              <!-- Quiz Step 1 -->
+              <div class="quiz-step active" data-quiz-step="1">
+                <h3 class="quiz-question-title">What is your ideal speed for meeting someone new?</h3>
+                <div class="quiz-options-grid">
+                  <div class="quiz-option option-chaotic" data-option="swipe">
+                    <div class="quiz-option-visual">⚡</div>
+                    <h4>High Volume</h4>
+                    <p>Show me 100 profiles an hour. I want to scroll quickly and match immediately.</p>
+                  </div>
+                  <div class="quiz-option option-tillsee" data-option="tillsee">
+                    <div class="quiz-option-visual">☕</div>
+                    <h4>Slow Pulse</h4>
+                    <p>Show me 10 curated people a morning. I want to read their thoughts over coffee.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quiz Step 2 -->
+              <div class="quiz-step" data-quiz-step="2">
+                <h3 class="quiz-question-title">How do you prefer to manage conversations?</h3>
+                <div class="quiz-options-grid">
+                  <div class="quiz-option option-chaotic" data-option="swipe">
+                    <div class="quiz-option-visual">💬 50+</div>
+                    <h4>Multi-tasking</h4>
+                    <p>I want 15 simultaneous chat windows blinking for my attention.</p>
+                  </div>
+                  <div class="quiz-option option-tillsee" data-option="tillsee">
+                    <div class="quiz-option-visual">✉️ 1</div>
+                    <h4>Singular Depth</h4>
+                    <p>Open exactly one conversation at a time. No background noise.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quiz Step 3 -->
+              <div class="quiz-step" data-quiz-step="3">
+                <h3 class="quiz-question-title">What matters most to you in a profile?</h3>
+                <div class="quiz-options-grid">
+                  <div class="quiz-option option-chaotic" data-option="swipe">
+                    <div class="quiz-option-visual">📐</div>
+                    <h4>The Jawline</h4>
+                    <p>A quick collection of holiday photos and a funny one-liner.</p>
+                  </div>
+                  <div class="quiz-option option-tillsee" data-option="tillsee">
+                    <div class="quiz-option-visual">✏️</div>
+                    <h4>The Honest Portrait</h4>
+                    <p>Answers to deep questions about grief, love, and kitchen-sink tears.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quiz Results (Tillsee Match) -->
+              <div class="quiz-result hidden" id="quiz-result-tillsee">
+                <div class="result-crest">🍀</div>
+                <h3 class="result-title">You are home.</h3>
+                <p class="result-text">
+                  You are tired of the endless swipe loop. You're ready to read a long letter, sit in a small room, and enjoy a slow morning.
+                </p>
+                <div class="typewriter-line" style="margin: 2rem 0;">
+                  <span class="typewriter-text" style="font-size: 1.8rem;" id="audience-typewriter-text">This is a small room. A slow morning. A long letter.</span>
+                </div>
+                <p class="final-home-text" style="color: var(--color-accent); font-family: var(--font-sans); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: 2rem;">If that sounds like what you've been missing, you're already home.</p>
+                <button class="btn-cta btn-large" id="btn-quiz-cta">Claim your spot on waitlist</button>
+              </div>
+
+              <!-- Quiz Results (Other Apps Match) -->
+              <div class="quiz-result hidden" id="quiz-result-other">
+                <div class="result-crest" style="color: #ff6b6b; border-color: rgba(244,67,54,0.3); background-color: rgba(244,67,54,0.05);">⚡</div>
+                <h3 class="result-title">We might not fit.</h3>
+                <p class="result-text">
+                  And that is perfectly fine. If you enjoy the fast-paced volume and dopamine loops of infinite feeds, there are beautiful apps out there. This is not one of them.
+                </p>
+                <p class="result-text" style="color: var(--color-text-muted); font-size: 0.95rem; margin-top: 2rem;">
+                  However, if you ever feel like slowing down, our doors will be open.
+                </p>
+                <button class="btn-cta btn-outline" id="btn-quiz-retry">Try quiz again</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Waitlist -->
+      <section class="section-waitlist" id="waitlist">
+        <div class="container max-w-4xl">
+          <div class="section-intro text-center">
+            <span class="section-subtitle-num">08 · The Waitlist</span>
+            <h2 class="section-title" id="waitlist-heading">We're opening the door slowly. On purpose.</h2>
+            <p class="section-desc">
+              The first thousand people on Tillsee will set the temperature of everything that follows. We're letting you in a few hundred at a time — first in New York, then Boston, then wherever the slow ones are waiting.
+            </p>
+          </div>
+
+          <!-- Postcard Form -->
+          <div class="postcard-wrapper scroll-reveal">
+            <div class="postcard" id="waitlist-postcard">
+              <!-- Front of Postcard -->
+              <div class="postcard-side postcard-front">
+                <div class="postcard-left">
+                  <div class="postcard-note-section">
+                    <h3 class="postcard-note-title">A Letter From a Friend</h3>
+                    <p class="postcard-note-p">
+                      Leave us your name. We'll write to you once, when it's your turn.
+                    </p>
+                    <p class="postcard-note-p">
+                      It won't be a marketing email. It will read more like a letter from a friend who's been waiting to introduce you to someone.
+                    </p>
+                    <div class="postcard-signature">With love, <br><span>Tillsee</span></div>
+                  </div>
+                </div>
+                <div class="postcard-divider"></div>
+                <div class="postcard-right">
+                  <div class="stamp-box">
+                    <div class="stamp-perforation"></div>
+                    <div class="stamp-inner">🍀</div>
+                  </div>
+                  <form class="postcard-form" id="form-waitlist">
+                    <div class="form-group">
+                      <label for="input-name" class="form-label">Your Name</label>
+                      <input type="text" id="input-name" class="form-input" placeholder="e.g. Julian or Clara" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="input-email" class="form-label">Your Email</label>
+                      <input type="email" id="input-email" class="form-input" placeholder="name@domain.com" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="select-location" class="form-label">Where are you waiting?</label>
+                      <select id="select-location" class="form-input form-select" required>
+                        <option value="" disabled selected>Select location...</option>
+                        <option value="new-york">New York City</option>
+                        <option value="boston">Boston</option>
+                        <option value="cambridge">Cambridge</option>
+                        <option value="elsewhere">Elsewhere</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn-waitlist-submit" id="btn-postcard-submit">Wait for me</button>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Back of Postcard (Success State) -->
+              <div class="postcard-side postcard-back hidden" id="postcard-success-view">
+                <div class="success-wax-seal">
+                  <div class="wax-seal-inner">🍀</div>
+                </div>
+                <h3 class="success-title">Your place is set.</h3>
+                <p class="success-message">
+                  Thank you, <span id="success-user-name">Friend</span>. We have noted your email <span id="success-user-email"></span> and location.
+                </p>
+                <p class="success-quote">
+                  "No noise. No nudges. Just one quiet morning, eventually, when the right person is ready and so are you."
+                </p>
+                <button class="btn-cta btn-outline btn-small" id="btn-success-reset">Return to letter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-content text-center">
+        <div class="footer-logo">
+          <span class="logo-icon">🍀</span> tillsee
+        </div>
+        <p class="footer-tagline">
+          Slow enough to feel something.
+        </p>
+        <p class="footer-subtagline">
+          For the ones who are done with swiping, and not yet done with love.
+        </p>
+        <div class="footer-divider"></div>
+        <div class="footer-links">
+          <a href="#reckoning">Philosophy</a>
+          <a href="#promises">Promises</a>
+          <a href="#coffee-club">Coffee Club</a>
+          <a href="#waitlist">Waitlist</a>
+          <a href="/support.html">Support</a>
+        </div>
+        <p class="footer-copy">
+          &copy; 2026 Tillsee. All rights reserved. Made for romantic intent.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
